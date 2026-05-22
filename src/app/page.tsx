@@ -1,6 +1,12 @@
 import Link from 'next/link'
 import { MapPin, Shield, Bell, FileText, Check } from 'lucide-react'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
 
 export const metadata: Metadata = {
   title: 'Dados Fazenda — Consulta de Imóveis Rurais em Segundos',

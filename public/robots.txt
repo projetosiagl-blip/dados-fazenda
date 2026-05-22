@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /planos
+Allow: /termos
+Allow: /privacidade
+Disallow: /dashboard/
+Disallow: /auth/
+Disallow: /api/
+
+Sitemap: https://dadosfazenda.com.br/sitemap.xml

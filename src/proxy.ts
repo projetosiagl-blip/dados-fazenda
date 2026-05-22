@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const res = NextResponse.next()
 
   const supabase = createServerClient(
@@ -18,12 +18,10 @@ export async function middleware(req: NextRequest) {
   const { data: { session } } = await supabase.auth.getSession()
   const { pathname } = req.nextUrl
 
-  // Rotas protegidas — redireciona para login se não autenticado
   if (pathname.startsWith('/dashboard') && !session) {
     return NextResponse.redirect(new URL('/auth/login', req.url))
   }
 
-  // Se já autenticado e tenta acessar login/cadastro, vai para dashboard
   if ((pathname.startsWith('/auth/login') || pathname.startsWith('/auth/cadastro')) && session) {
     return NextResponse.redirect(new URL('/dashboard', req.url))
   }

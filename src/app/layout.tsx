@@ -1,5 +1,11 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
 
 export const metadata: Metadata = {
   title: {
@@ -10,11 +16,6 @@ export const metadata: Metadata = {
   keywords: ['consulta rural', 'CAR', 'INCRA', 'SIGEF', 'imóvel rural', 'fazenda', 'embargos IBAMA', 'dados rurais', 'monitoramento rural'],
   authors: [{ name: 'Dados Fazenda' }],
   robots: { index: true, follow: true },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
