@@ -1,5 +1,17 @@
 import Link from 'next/link'
-import { MapPin, Shield, Bell, FileText, ChevronRight, Check } from 'lucide-react'
+import { MapPin, Shield, Bell, FileText, Check } from 'lucide-react'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Dados Fazenda — Consulta de Imóveis Rurais em Segundos',
+  description: 'Acesse dados de CAR, INCRA, embargos IBAMA, terras indígenas e mais de 25 camadas de informação rural. Consulte qualquer fazenda do Brasil pelo WhatsApp ou painel web.',
+  keywords: 'consulta rural, CAR, INCRA, SIGEF, imóvel rural, fazenda, embargos IBAMA, dados rurais, monitoramento rural',
+  openGraph: {
+    title: 'Dados Fazenda — Consulta de Imóveis Rurais em Segundos',
+    description: 'Acesse dados completos de qualquer fazenda do Brasil. CAR, INCRA, embargos e muito mais.',
+    type: 'website',
+  },
+}
 
 export default function Home() {
   return (
@@ -180,6 +192,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section style={{ padding: '5rem 1.5rem', backgroundColor: 'white', borderTop: '1px solid #d4ddc8' }}>
+        <div style={{ maxWidth: 720, margin: '0 auto' }}>
+          <h2 style={{ textAlign: 'center', fontSize: '1.9rem', fontWeight: 700, marginBottom: '3rem', color: '#1a1a1a' }}>Perguntas frequentes</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {[
+              { p: 'Os dados são atualizados com que frequência?', r: 'Os dados do CAR e INCRA são consultados em tempo real a cada consulta. Os embargos IBAMA e focos de queimadas são sincronizados diariamente. As camadas estáticas (terras indígenas, unidades de conservação) são atualizadas mensalmente.' },
+              { p: 'Preciso de um celular específico para usar o WhatsApp?', r: 'Não. Você usa seu próprio WhatsApp normalmente. Basta salvar o número do Dados Fazenda e enviar sua localização ou o código CAR da propriedade.' },
+              { p: 'Os dados substituem documentos oficiais?', r: 'Não. Os dados são fornecidos para fins informativos e de monitoramento. Para fins jurídicos, sempre consulte os documentos originais nos sistemas governamentais (SICAR, INCRA, IBAMA).' },
+              { p: 'Posso monitorar propriedades de terceiros?', r: 'Sim. Você pode cadastrar e monitorar qualquer imóvel rural do Brasil, independente de ser proprietário. Muitos advogados e corretores usam o serviço para acompanhar imóveis de clientes.' },
+              { p: 'O que acontece se cancelar?', r: 'Você pode cancelar a qualquer momento pelo painel de configurações. O acesso permanece ativo até o fim do período pago. Não há multa ou fidelidade mínima.' },
+              { p: 'O plano Empresarial permite quantos usuários?', r: 'O plano Empresarial inclui 2 acessos. Usuários adicionais podem ser adicionados por R$ 149/mês cada.' },
+            ].map((item, i) => (
+              <div key={i} style={{ border: '1px solid #d4ddc8', borderRadius: 8, padding: '1.25rem 1.5rem', backgroundColor: '#fafcfa' }}>
+                <h3 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#1a1a1a', marginBottom: '0.5rem' }}>{item.p}</h3>
+                <p style={{ color: '#4a5568', fontSize: '0.875rem', lineHeight: 1.6 }}>{item.r}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA FINAL */}
       <section style={{ backgroundColor: '#1e4d2b', padding: '5rem 1.5rem', textAlign: 'center' }}>
         <div style={{ maxWidth: 600, margin: '0 auto' }}>
@@ -205,8 +239,9 @@ export default function Home() {
             <span style={{ color: '#a8d5b5', fontWeight: 600, fontSize: '0.9rem' }}>Dados Fazenda</span>
           </div>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <a href="#" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Termos de uso</a>
-            <a href="#" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Privacidade</a>
+            <Link href="/termos" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Termos de uso</Link>
+            <Link href="/privacidade" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Privacidade</Link>
+            <Link href="/planos" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Planos</Link>
             <a href="mailto:contato@dadosfazenda.com.br" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Contato</a>
           </div>
           <p style={{ color: '#4a7c5a', fontSize: '0.8rem' }}>© 2026 Dados Fazenda. Todos os direitos reservados.</p>
