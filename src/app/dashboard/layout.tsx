@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { MapPin, LayoutDashboard, Map, History, Bell, Settings, LogOut } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
+import SidebarMobile from '@/components/ui/SidebarMobile'
 
 const NAV = [
   { href: '/dashboard', label: 'Painel', icon: LayoutDashboard },
@@ -29,7 +30,6 @@ export default async function DashboardLayout({ children }: { children: React.Re
       .select('plano, nome')
       .eq('id', user.id)
       .single()
-
     plano = usuario?.plano ?? 'basico'
     nomeUsuario = usuario?.nome?.split(' ')[0] ?? ''
   }
@@ -37,8 +37,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
   return (
     <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#f5f7f2' }}>
 
-      {/* SIDEBAR */}
-      <aside style={{ width: 240, backgroundColor: '#1e4d2b', display: 'flex', flexDirection: 'column', flexShrink: 0, position: 'fixed', top: 0, left: 0, height: '100vh', zIndex: 50 }}>
+      {/* SIDEBAR DESKTOP */}
+      <aside className="sidebar-desktop" style={{ width: 240, backgroundColor: '#1e4d2b', display: 'flex', flexDirection: 'column', flexShrink: 0, position: 'fixed', top: 0, left: 0, height: '100vh', zIndex: 50 }}>
         <div style={{ padding: '1.25rem', borderBottom: '1px solid #2d6a4f' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
             <div style={{ width: 32, height: 32, backgroundColor: '#52b788', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -72,8 +72,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
             <p style={{ color: 'white', fontWeight: 700, fontSize: '0.85rem' }}>{PLANO_LABELS[plano] ?? 'Plano Básico'}</p>
           </div>
           <form action="/auth/logout" method="post">
-            <button type="submit"
-              style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '0.5rem 0.75rem', borderRadius: 6, color: '#6b9e7e', fontSize: '0.8rem', background: 'none', border: 'none', cursor: 'pointer', width: '100%' }}>
+            <button type="submit" style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '0.5rem 0.75rem', borderRadius: 6, color: '#6b9e7e', fontSize: '0.8rem', background: 'none', border: 'none', cursor: 'pointer', width: '100%' }}>
               <LogOut size={15} />
               Sair da conta
             </button>
@@ -81,13 +80,20 @@ export default async function DashboardLayout({ children }: { children: React.Re
         </div>
       </aside>
 
+      {/* SIDEBAR MOBILE */}
+      <SidebarMobile plano={plano} nomeUsuario={nomeUsuario} />
+
       {/* CONTEÚDO */}
-      <main style={{ marginLeft: 240, flex: 1, minHeight: '100vh' }}>
+      <main className="dashboard-main" style={{ marginLeft: 240, flex: 1, minHeight: '100vh' }}>
         {children}
       </main>
 
       <style>{`
         .nav-item:hover { background-color: #2d6a4f !important; color: white !important; }
+        @media (max-width: 768px) {
+          .sidebar-desktop { display: none !important; }
+          .dashboard-main { margin-left: 0 !important; padding-top: 56px !important; }
+        }
       `}</style>
     </div>
   )

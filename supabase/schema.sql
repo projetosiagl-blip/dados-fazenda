@@ -132,7 +132,8 @@ CREATE TABLE IF NOT EXISTS queimadas (
   data_hora TIMESTAMPTZ,
   satelite TEXT,
   geom GEOMETRY(POINT, 4326),
-  atualizado_em TIMESTAMPTZ DEFAULT NOW()
+  atualizado_em TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (latitude, longitude, data_hora)
 );
 
 CREATE TABLE IF NOT EXISTS mineracao_anm (
