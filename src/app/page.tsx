@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { MapPin, Bell, FileText, Check, X, MessageCircle, Map, Shield, Layers, ChevronDown } from 'lucide-react'
+import { MapPin, Bell, FileText, Check, X, MessageCircle, Map, Shield, Layers, Leaf, Scale, Building2, TrendingUp } from 'lucide-react'
 import type { Metadata, Viewport } from 'next'
 
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, maximumScale: 1 }
@@ -381,13 +381,15 @@ export default function Home() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
             {[
-              { emoji: '🌾', titulo: 'Produtores Rurais', desc: 'Consulte e monitore suas propriedades com facilidade pelo celular, sem precisar aprender sistemas complexos.' },
-              { emoji: '⚖️', titulo: 'Advogados do Agro', desc: 'Acesse dados fundiários e ambientais com precisão e velocidade para suas análises e due diligence.' },
-              { emoji: '🏡', titulo: 'Corretores Rurais', desc: 'Consulte qualquer fazenda antes de fechar negócio. Em segundos você tem tudo que precisa.' },
-              { emoji: '💼', titulo: 'Investidores', desc: 'Due diligence completa de propriedades rurais em todo o Brasil antes de qualquer decisão de compra.' },
+              { icon: <Leaf size={22} color="#2d6a4f" />, titulo: 'Produtores Rurais', desc: 'Consulte e monitore suas propriedades com facilidade pelo celular, sem precisar aprender sistemas complexos.' },
+              { icon: <Scale size={22} color="#2d6a4f" />, titulo: 'Advogados do Agro', desc: 'Acesse dados fundiários e ambientais com precisão e velocidade para suas análises e due diligence.' },
+              { icon: <Building2 size={22} color="#2d6a4f" />, titulo: 'Corretores Rurais', desc: 'Consulte qualquer fazenda antes de fechar negócio. Em segundos você tem tudo que precisa.' },
+              { icon: <TrendingUp size={22} color="#2d6a4f" />, titulo: 'Investidores', desc: 'Due diligence completa de propriedades rurais em todo o Brasil antes de qualquer decisão de compra.' },
             ].map(item => (
               <div key={item.titulo} style={{ backgroundColor: '#f8faf6', border: '1px solid #e2e8d5', borderRadius: 12, padding: '1.75rem' }}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.875rem' }}>{item.emoji}</div>
+                <div style={{ width: 44, height: 44, backgroundColor: '#e8f4ee', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+                  {item.icon}
+                </div>
                 <h3 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#1a1a1a', marginBottom: '0.5rem' }}>{item.titulo}</h3>
                 <p style={{ color: '#5a6a5a', fontSize: '0.85rem', lineHeight: 1.65 }}>{item.desc}</p>
               </div>
