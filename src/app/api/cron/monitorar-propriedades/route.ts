@@ -62,11 +62,16 @@ export async function GET(req: NextRequest) {
       alertasGerados++
     }
 
-    // Verifica queimadas próximas (raio 20km)
+    // Verifica queimadas próximas (raio ~20km via bounding box)
+    const raioGraus = 0.18 // ~20km
     const { data: queimadas } = await supabase
       .from('queimadas')
       .select('id')
       .gte('data_hora', new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString())
+      .gte('latitude', prop.latitude - raioGraus)
+      .lte('latitude', prop.latitude + raioGraus)
+      .gte('longitude', prop.longitude - raioGraus)
+      .lte('longitude', prop.longitude + raioGraus)
 
     // Atualiza snapshot
     await supabase.from('propriedades').update({

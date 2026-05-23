@@ -1,7 +1,8 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { Check, ArrowLeft, CreditCard, Zap } from 'lucide-react'
+import { Check, ArrowLeft, CreditCard } from 'lucide-react'
+import BotaoUpgrade from '@/components/ui/BotaoUpgrade'
 
 const PLANOS = [
   {
@@ -32,7 +33,7 @@ export default async function Plano() {
 
   const { data: usuario } = await supabase
     .from('usuarios')
-    .select('plano, status_assinatura, asaas_subscription_id')
+    .select('plano, status_assinatura, asaas_subscription_id, nome, telefone')
     .eq('id', user.id)
     .single()
 
@@ -108,11 +109,13 @@ export default async function Plano() {
                   Plano atual
                 </div>
               ) : (
-                <Link href={`/auth/cadastro?plano=${p.id}`}
-                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, backgroundColor: isUpgrade ? '#2d6a4f' : '#f5f7f2', color: isUpgrade ? 'white' : '#4a5568', padding: '0.65rem', borderRadius: 6, textDecoration: 'none', fontWeight: 600, fontSize: '0.85rem', border: isUpgrade ? 'none' : '1px solid #d4ddc8' }}>
-                  {isUpgrade && <Zap size={14} />}
-                  {isUpgrade ? 'Fazer upgrade' : 'Mudar para este plano'}
-                </Link>
+                <BotaoUpgrade
+                  planoId={p.id}
+                  nome={usuario?.nome ?? ''}
+                  telefone={usuario?.telefone ?? ''}
+                  email={user.email}
+                  isUpgrade={isUpgrade}
+                />
               )}
             </div>
           )

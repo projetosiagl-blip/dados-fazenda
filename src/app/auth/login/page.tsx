@@ -65,7 +65,7 @@ export default function Login() {
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
                   <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#1a1a1a' }}>Senha</label>
-                  <a href="#" style={{ fontSize: '0.8rem', color: '#2d6a4f', textDecoration: 'none' }}>Esqueceu?</a>
+                  <Link href="/auth/recuperar-senha" style={{ fontSize: '0.8rem', color: '#2d6a4f', textDecoration: 'none' }}>Esqueceu?</Link>
                 </div>
                 <div style={{ position: 'relative' }}>
                   <input type={mostrarSenha ? 'text' : 'password'} required value={senha} onChange={e => setSenha(e.target.value)}

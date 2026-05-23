@@ -22,7 +22,7 @@ export async function proxy(req: NextRequest) {
     return NextResponse.redirect(new URL('/auth/login', req.url))
   }
 
-  if ((pathname.startsWith('/auth/login') || pathname.startsWith('/auth/cadastro')) && session) {
+  if ((pathname === '/auth/login' || pathname === '/auth/cadastro') && session) {
     return NextResponse.redirect(new URL('/dashboard', req.url))
   }
 
