@@ -1,6 +1,10 @@
 import { MensagemWhatsApp, Plano, ResultadoConsulta } from '@/types'
-import { consultarCAR, consultarCARPorCoordenada } from '@/lib/apis/infosimples'
-import { consultarINCRA, consultarINCRAPorCoordenada } from '@/lib/apis/netrin'
+import {
+  consultarCAR,
+  consultarCARPorCoordenada,
+  consultarINCRAPorCAR,
+  consultarINCRAPorCoordenada,
+} from '@/lib/apis/infosimples'
 import { buscarEmbargos } from '@/lib/apis/ibama'
 
 interface ResultadoProcessado {
@@ -16,10 +20,14 @@ export async function processarConsulta(
   const lon = mensagem.longitude
   const car = mensagem.car_codigo
 
-  // Chama APIs em paralelo
+  // Todas as APIs em paralelo
   const [dadosCAR, dadosINCRA, embargos] = await Promise.all([
-    car ? consultarCAR(car) : lat && lon ? consultarCARPorCoordenada(lat, lon) : null,
-    car ? consultarINCRA(car) : lat && lon ? consultarINCRAPorCoordenada(lat, lon) : null,
+    car
+      ? consultarCAR(car)
+      : lat && lon ? consultarCARPorCoordenada(lat, lon) : null,
+    car
+      ? consultarINCRAPorCAR(car)
+      : lat && lon ? consultarINCRAPorCoordenada(lat, lon) : null,
     lat && lon ? buscarEmbargos(lat, lon) : [],
   ])
 
@@ -30,9 +38,7 @@ export async function processarConsulta(
     consultado_em: new Date().toISOString(),
   }
 
-  const texto = formatarResposta(resultado, plano)
-
-  return { texto, dados: resultado }
+  return { texto: formatarResposta(resultado, plano), dados: resultado }
 }
 
 function formatarResposta(resultado: ResultadoConsulta, plano: Plano): string {
@@ -41,21 +47,23 @@ function formatarResposta(resultado: ResultadoConsulta, plano: Plano): string {
   linhas.push(`🌾 *DADOS DA PROPRIEDADE RURAL*`)
   linhas.push(`━━━━━━━━━━━━━━━━━━━━━`)
 
+  // CAR
   if (resultado.car) {
     const car = resultado.car
-    linhas.push(`📋 *CAR*`)
+    linhas.push(`📋 *CAR / SICAR*`)
     linhas.push(`• Código: \`${car.codigo}\``)
     linhas.push(`• Status: ${car.status}`)
     linhas.push(`• Área: ${car.area_ha.toLocaleString('pt-BR')} ha`)
     linhas.push(`• Município: ${car.municipio} - ${car.estado}`)
     if (car.proprietario) linhas.push(`• Proprietário: ${car.proprietario}`)
   } else {
-    linhas.push(`📋 *CAR*`)
+    linhas.push(`📋 *CAR / SICAR*`)
     linhas.push(`• Não encontrado para esta localização`)
   }
 
   linhas.push(``)
 
+  // INCRA
   if (resultado.incra) {
     const incra = resultado.incra
     linhas.push(`🏛️ *INCRA / SIGEF*`)
@@ -86,13 +94,14 @@ function formatarResposta(resultado: ResultadoConsulta, plano: Plano): string {
     }
   }
 
+  // Upgrade hint para plano básico
   if (plano === 'basico') {
     linhas.push(``)
     linhas.push(`━━━━━━━━━━━━━━━━━━━━━`)
-    linhas.push(`💡 *Faça upgrade para o Plano Full* e acesse:`)
+    linhas.push(`💡 *Plano Full* inclui:`)
     linhas.push(`• Monitoramento contínuo com alertas`)
-    linhas.push(`• Queimadas, desmatamento, mineração e +15 camadas`)
-    linhas.push(`• Relatório mensal PDF (Farm Scan)`)
+    linhas.push(`• Queimadas, desmatamento e +15 camadas`)
+    linhas.push(`• Relatório PDF mensal (Farm Scan)`)
     linhas.push(`👉 ${process.env.NEXT_PUBLIC_APP_URL}/planos`)
   }
 
