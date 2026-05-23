@@ -248,7 +248,7 @@ export default function Home() {
             <Link href="/termos" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Termos de uso</Link>
             <Link href="/privacidade" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Privacidade</Link>
             <Link href="/planos" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Planos</Link>
-            <a href="mailto:contato@dadosfazenda.com.br" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Contato</a>
+            <Link href="/contato" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Contato</Link>
           </div>
           <p style={{ color: '#4a7c5a', fontSize: '0.8rem' }}>© 2026 Dados Fazenda. Todos os direitos reservados.</p>
         </div>

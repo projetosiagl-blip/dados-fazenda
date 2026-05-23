@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { MapPin, LayoutDashboard, Map, History, Bell, Settings, LogOut } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import SidebarMobile from '@/components/ui/SidebarMobile'
+import { ToastProvider } from '@/components/ui/Toast'
 
 const NAV = [
   { href: '/dashboard', label: 'Painel', icon: LayoutDashboard },
@@ -85,7 +86,9 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
       {/* CONTEÚDO */}
       <main className="dashboard-main" style={{ marginLeft: 240, flex: 1, minHeight: '100vh' }}>
-        {children}
+        <ToastProvider>
+          {children}
+        </ToastProvider>
       </main>
 
       <style>{`

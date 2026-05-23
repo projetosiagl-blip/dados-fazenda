@@ -90,9 +90,9 @@ export default async function Configuracoes() {
           </div>
 
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-            <button style={{ fontSize: '0.82rem', color: 'white', fontWeight: 600, backgroundColor: '#2d6a4f', border: 'none', borderRadius: 5, padding: '0.5rem 1.1rem', cursor: 'pointer' }}>
-              Fazer upgrade
-            </button>
+            <a href="/dashboard/plano" style={{ fontSize: '0.82rem', color: 'white', fontWeight: 600, backgroundColor: '#2d6a4f', border: 'none', borderRadius: 5, padding: '0.5rem 1.1rem', cursor: 'pointer', textDecoration: 'none', display: 'inline-block' }}>
+              Gerenciar plano
+            </a>
             <button style={{ fontSize: '0.82rem', color: '#4a5568', fontWeight: 500, background: 'none', border: '1px solid #d4ddc8', borderRadius: 5, padding: '0.5rem 1.1rem', cursor: 'pointer' }}>
               Ver histórico de pagamentos
             </button>
