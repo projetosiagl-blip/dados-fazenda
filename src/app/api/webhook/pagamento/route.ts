@@ -10,11 +10,41 @@ export async function POST(req: NextRequest) {
 
   const body = await req.json()
   const { event, payment, subscription } = body
-
   const supabase = createServiceClient()
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://dadosfazenda.com.br'
 
+  // ── Consulta avulsa (externalReference = "consulta:<uuid>") ──────────────────
+  const externalRef = payment?.externalReference as string | undefined
+  if (externalRef?.startsWith('consulta:')) {
+    const consultaId = externalRef.replace('consulta:', '')
+    const pago = ['PAYMENT_CONFIRMED', 'PAYMENT_RECEIVED'].includes(event)
+
+    if (pago) {
+      await supabase
+        .from('consultas_avulsas')
+        .update({ status_pagamento: 'pago' })
+        .eq('id', consultaId)
+        .eq('status_pagamento', 'pendente')
+
+      // Dispara entrega
+      fetch(`${appUrl}/api/consulta/entregar/${consultaId}`, {
+        method: 'POST',
+        headers: { 'x-internal-secret': process.env.CRON_SECRET ?? '' },
+      }).catch(() => {})
+    }
+
+    if (event === 'PAYMENT_DELETED') {
+      await supabase
+        .from('consultas_avulsas')
+        .update({ status_pagamento: 'falhou' })
+        .eq('id', consultaId)
+    }
+
+    return NextResponse.json({ ok: true })
+  }
+
+  // ── Assinatura mensal ────────────────────────────────────────────────────────
   const assinatura_id = subscription?.id ?? payment?.subscription
-
   if (!assinatura_id) return NextResponse.json({ ok: true })
 
   const { data: usuario } = await supabase
@@ -37,7 +67,7 @@ export async function POST(req: NextRequest) {
         usuario.telefone,
         `✅ *Pagamento confirmado!*\n\n` +
         `Seu plano *${usuario.plano}* está ativo.\n` +
-        `Envie uma localização ou código CAR para consultar sua propriedade.`
+        `Envie uma localização ou código CAR para consultar sua propriedade.`,
       )
       break
     }
@@ -52,7 +82,7 @@ export async function POST(req: NextRequest) {
         usuario.telefone,
         `⚠️ *Pagamento em atraso*\n\n` +
         `Regularize sua assinatura para continuar consultando:\n` +
-        `${process.env.NEXT_PUBLIC_APP_URL}/planos`
+        `${appUrl}/planos`,
       )
       break
     }
@@ -66,8 +96,7 @@ export async function POST(req: NextRequest) {
 
       await enviarMensagem(
         usuario.telefone,
-        `❌ *Assinatura cancelada.*\n\n` +
-        `Para reativar: ${process.env.NEXT_PUBLIC_APP_URL}/planos`
+        `❌ *Assinatura cancelada.*\n\nPara reativar: ${appUrl}/planos`,
       )
       break
     }

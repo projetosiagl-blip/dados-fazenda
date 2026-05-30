@@ -220,6 +220,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CONSULTA AVULSA */}
+      <section id="consulta-avulsa" style={{ padding: '5rem 1.5rem', backgroundColor: '#f5f7f2', borderTop: '1px solid #e2e8d5' }}>
+        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span style={{ color: '#b7882c', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Sem assinatura</span>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: '#1a1a1a', marginTop: '0.5rem', letterSpacing: '-0.5px' }}>
+              Consulta única · Pague e receba agora
+            </h2>
+            <p style={{ color: '#5a6a5a', marginTop: '0.75rem', fontSize: '0.95rem' }}>
+              Ideal para quem precisa de uma consulta pontual sem compromisso mensal
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', maxWidth: 720, margin: '0 auto' }}>
+            {/* Consulta */}
+            <div style={{ backgroundColor: 'white', border: '1px solid #e2e8d5', borderRadius: 12, padding: '2rem' }}>
+              <h3 style={{ fontWeight: 700, fontSize: '1.05rem', color: '#1a1a1a', marginBottom: '0.25rem' }}>Consulta</h3>
+              <p style={{ color: '#5a6a5a', fontSize: '0.82rem', marginBottom: '1.25rem' }}>Resultado no WhatsApp em segundos</p>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 4, marginBottom: '1.5rem' }}>
+                <span style={{ fontSize: '2rem', fontWeight: 800, color: '#1e4d2b', letterSpacing: '-1px' }}>R$ 19,90</span>
+                <span style={{ color: '#5a6a5a', fontSize: '0.875rem' }}>por consulta</span>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {['CAR + INCRA + SIGEF', 'Embargos IBAMA', 'Terras Indígenas e UCs', 'Entrega no WhatsApp'].map(r => (
+                  <li key={r} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.85rem', color: '#3a4a3a' }}>
+                    <Check size={13} color="#2d6a4f" strokeWidth={3} />{r}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/consulta?tipo=consulta" style={{ display: 'block', textAlign: 'center', backgroundColor: '#f0f7f2', color: '#2d6a4f', padding: '0.8rem', borderRadius: 8, textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem', border: '1px solid #c8dfc8' }}>
+                Consultar agora
+              </Link>
+            </div>
+
+            {/* Relatório */}
+            <div style={{ backgroundColor: 'white', border: '2px solid #2d6a4f', borderRadius: 12, padding: '2rem', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: -12, left: '50%', transform: 'translateX(-50%)', backgroundColor: '#b7882c', color: 'white', padding: '0.15rem 0.875rem', borderRadius: 20, fontSize: '0.7rem', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                MAIS COMPLETO
+              </div>
+              <h3 style={{ fontWeight: 700, fontSize: '1.05rem', color: '#1a1a1a', marginBottom: '0.25rem' }}>Relatório Completo</h3>
+              <p style={{ color: '#5a6a5a', fontSize: '0.82rem', marginBottom: '1.25rem' }}>Farm Scan PDF + WhatsApp</p>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 4, marginBottom: '1.5rem' }}>
+                <span style={{ fontSize: '2rem', fontWeight: 800, color: '#1e4d2b', letterSpacing: '-1px' }}>R$ 49,90</span>
+                <span style={{ color: '#5a6a5a', fontSize: '0.875rem' }}>por relatório</span>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {['Tudo da Consulta', 'Farm Scan PDF completo', 'Queimadas e desmatamento', 'Download disponível por 7 dias'].map(r => (
+                  <li key={r} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.85rem', color: '#3a4a3a' }}>
+                    <Check size={13} color="#2d6a4f" strokeWidth={3} />{r}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/consulta?tipo=relatorio" style={{ display: 'block', textAlign: 'center', backgroundColor: '#2d6a4f', color: 'white', padding: '0.8rem', borderRadius: 8, textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem' }}>
+                Gerar relatório
+              </Link>
+            </div>
+          </div>
+
+          <p style={{ textAlign: 'center', marginTop: '1.75rem', fontSize: '0.875rem', color: '#6a7a6a' }}>
+            Precisa de consultas frequentes?{' '}
+            <a href="#planos" style={{ color: '#2d6a4f', fontWeight: 600, textDecoration: 'none' }}>
+              Veja os planos de assinatura →
+            </a>
+          </p>
+        </div>
+      </section>
+
       {/* PLANOS */}
       <section id="planos" style={{ padding: '5rem 1.5rem' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
