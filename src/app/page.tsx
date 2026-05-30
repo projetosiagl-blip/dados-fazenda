@@ -233,7 +233,7 @@ export default function Home() {
                       </div>
                       <div>
                         <p style={{ color: '#e9eaeb', fontSize: 11, margin: 0, fontWeight: 600 }}>Localização</p>
-                        <p style={{ color: 'rgba(233,234,235,0.6)', fontSize: 10, margin: 0 }}>Rio Verde, GO</p>
+                        <p style={{ color: 'rgba(233,234,235,0.6)', fontSize: 10, margin: 0 }}>Sorriso, MT</p>
                       </div>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 3, marginTop: 3 }}>
@@ -270,7 +270,7 @@ export default function Home() {
                     maxWidth: '90%',
                   }}>
                     <p style={{ color: '#e9eaeb', fontSize: 10.5, lineHeight: 1.6, margin: 0, whiteSpace: 'pre-line', fontFamily: 'monospace' }}>
-                      {'🌾 *DADOS DA PROPRIEDADE*\n━━━━━━━━━━━━\n📋 CAR: GO-5219803-XXXX\n• Status: Ativo ✅\n• Área: 1.240 ha\n• Rio Verde — GO\n\n🏛️ INCRA/SIGEF\n• CCIR: 12345678\n• Titular: João Silva\n\n🚨 IBAMA: ✅ Sem embargos'}
+                      {'🌾 *DADOS DA PROPRIEDADE*\n━━━━━━━━━━━━\n📋 CAR: MT-5107602-ABCD\n• Status: Ativo ✅\n• Área: 2.840 ha\n• Sorriso — MT\n\n🏛️ INCRA/SIGEF\n• CCIR: 87654321\n• Titular: C. A. Mendonça\n\n🚨 IBAMA: ✅ Sem embargos'}
                     </p>
                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
                       <span style={{ color: 'rgba(233,234,235,0.35)', fontSize: 9 }}>09:42</span>
