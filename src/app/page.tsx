@@ -502,21 +502,39 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ backgroundColor: '#152d1a', padding: '2.5rem 1.5rem' }}>
-        <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <div style={{ width: 28, height: 28, backgroundColor: '#52b788', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <MapPin size={15} color="white" />
+      <footer style={{ backgroundColor: '#152d1a', padding: '3rem 1.5rem' }}>
+        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem', marginBottom: '2rem' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: '0.875rem' }}>
+                <div style={{ width: 28, height: 28, backgroundColor: '#52b788', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <MapPin size={15} color="white" />
+                </div>
+                <span style={{ color: '#a8d5b5', fontWeight: 700 }}>Dados Fazenda</span>
+              </div>
+              <p style={{ color: '#4a6a52', fontSize: '0.78rem', lineHeight: 1.7 }}>
+                LGE SOLUCOES LTDA.<br />
+                CNPJ 50.571.717/0001-61<br />
+                Av. Contorno, Qd. 67, Lt. 19A — Centro<br />
+                Ivolândia — GO
+              </p>
             </div>
-            <span style={{ color: '#a8d5b5', fontWeight: 700 }}>Dados Fazenda</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <span style={{ color: '#6b9e7e', fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Links</span>
+              <Link href="/termos" style={{ color: '#6b9e7e', fontSize: '0.82rem', textDecoration: 'none' }}>Termos de uso</Link>
+              <Link href="/privacidade" style={{ color: '#6b9e7e', fontSize: '0.82rem', textDecoration: 'none' }}>Privacidade</Link>
+              <Link href="/planos" style={{ color: '#6b9e7e', fontSize: '0.82rem', textDecoration: 'none' }}>Planos</Link>
+              <Link href="/contato" style={{ color: '#6b9e7e', fontSize: '0.82rem', textDecoration: 'none' }}>Contato</Link>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <span style={{ color: '#6b9e7e', fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>Contato</span>
+              <a href="mailto:projetosiagl@gmail.com" style={{ color: '#6b9e7e', fontSize: '0.82rem', textDecoration: 'none' }}>projetosiagl@gmail.com</a>
+              <a href="https://wa.me/5562942631425" target="_blank" rel="noreferrer" style={{ color: '#6b9e7e', fontSize: '0.82rem', textDecoration: 'none' }}>+55 62 94263-1425</a>
+            </div>
           </div>
-          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <Link href="/termos" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Termos de uso</Link>
-            <Link href="/privacidade" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Privacidade</Link>
-            <Link href="/planos" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Planos</Link>
-            <Link href="/contato" style={{ color: '#6b9e7e', fontSize: '0.8rem', textDecoration: 'none' }}>Contato</Link>
+          <div style={{ borderTop: '1px solid #1e3d24', paddingTop: '1.5rem' }}>
+            <p style={{ color: '#3d6b45', fontSize: '0.75rem', textAlign: 'center' }}>© 2026 Dados Fazenda · LGE SOLUCOES LTDA. · CNPJ 50.571.717/0001-61 · Todos os direitos reservados</p>
           </div>
-          <p style={{ color: '#3d6b45', fontSize: '0.78rem' }}>© 2026 Dados Fazenda · Todos os direitos reservados</p>
         </div>
       </footer>
     </div>

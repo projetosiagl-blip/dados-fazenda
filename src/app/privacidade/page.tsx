@@ -21,7 +21,7 @@ export default function Privacidade() {
           {[
             {
               titulo: '1. Quem somos',
-              texto: 'Dados Fazenda é operado pela Agrios Tecnologia LTDA (CNPJ 63.528.444/0001-14). Esta política descreve como coletamos, usamos e protegemos seus dados pessoais.'
+              texto: 'Dados Fazenda é operado pela LGE SOLUCOES LTDA. (CNPJ 50.571.717/0001-61). Esta política descreve como coletamos, usamos e protegemos seus dados pessoais.'
             },
             {
               titulo: '2. Dados que coletamos',
@@ -45,7 +45,7 @@ export default function Privacidade() {
             },
             {
               titulo: '7. Seus direitos (LGPD Art. 18)',
-              texto: 'Você tem direito a: confirmar a existência de tratamento; acessar seus dados; corrigir dados incompletos ou inexatos; solicitar a exclusão de dados desnecessários; revogar consentimento; portabilidade de dados. Para exercer seus direitos, contate: contato@dadosfazenda.com.br'
+              texto: 'Você tem direito a: confirmar a existência de tratamento; acessar seus dados; corrigir dados incompletos ou inexatos; solicitar a exclusão de dados desnecessários; revogar consentimento; portabilidade de dados. Para exercer seus direitos, contate: projetosiagl@gmail.com'
             },
             {
               titulo: '8. Segurança',
@@ -57,7 +57,7 @@ export default function Privacidade() {
             },
             {
               titulo: '10. Contato',
-              texto: 'Encarregado de dados (DPO): contato@dadosfazenda.com.br · Prazo de resposta: até 15 dias úteis.'
+              texto: 'Encarregado de dados (DPO): projetosiagl@gmail.com · Prazo de resposta: até 15 dias úteis.'
             },
           ].map(item => (
             <div key={item.titulo} style={{ marginBottom: '1.5rem' }}>
@@ -68,7 +68,7 @@ export default function Privacidade() {
 
           <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid #d4ddc8' }}>
             <p style={{ color: '#4a5568', fontSize: '0.8rem' }}>
-              Dúvidas sobre privacidade? <a href="mailto:contato@dadosfazenda.com.br" style={{ color: '#2d6a4f', textDecoration: 'none', fontWeight: 600 }}>contato@dadosfazenda.com.br</a>
+              Dúvidas sobre privacidade? <a href="mailto:projetosiagl@gmail.com" style={{ color: '#2d6a4f', textDecoration: 'none', fontWeight: 600 }}>projetosiagl@gmail.com</a>
             </p>
           </div>
         </div>

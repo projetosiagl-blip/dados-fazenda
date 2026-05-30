@@ -32,7 +32,7 @@ export default function Contato() {
             <p style={{ color: '#25D366', fontWeight: 700, fontSize: '0.875rem' }}>+55 62 94263-1425</p>
           </a>
 
-          <a href="mailto:contato@dadosfazenda.com.br"
+          <a href="mailto:projetosiagl@gmail.com"
             style={{ backgroundColor: 'white', border: '1px solid #d4ddc8', borderRadius: 8, padding: '1.75rem', textDecoration: 'none', display: 'block' }}>
             <div style={{ width: 44, height: 44, backgroundColor: '#f0f5f0', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
               <Mail size={22} color="#2d6a4f" />
@@ -41,7 +41,7 @@ export default function Contato() {
             <p style={{ color: '#4a5568', fontSize: '0.85rem', lineHeight: 1.6, marginBottom: '0.75rem' }}>
               Para questões técnicas, suporte à conta ou assuntos comerciais.
             </p>
-            <p style={{ color: '#2d6a4f', fontWeight: 700, fontSize: '0.875rem' }}>contato@dadosfazenda.com.br</p>
+            <p style={{ color: '#2d6a4f', fontWeight: 700, fontSize: '0.875rem' }}>projetosiagl@gmail.com</p>
           </a>
         </div>
 

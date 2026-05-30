@@ -68,7 +68,7 @@ export default function Termos() {
 
           <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid #d4ddc8' }}>
             <p style={{ color: '#4a5568', fontSize: '0.8rem' }}>
-              Dúvidas? Entre em contato: <a href="mailto:contato@dadosfazenda.com.br" style={{ color: '#2d6a4f', textDecoration: 'none', fontWeight: 600 }}>contato@dadosfazenda.com.br</a>
+              Dúvidas? Entre em contato: <a href="mailto:projetosiagl@gmail.com" style={{ color: '#2d6a4f', textDecoration: 'none', fontWeight: 600 }}>projetosiagl@gmail.com</a>
             </p>
           </div>
         </div>
