@@ -129,24 +129,184 @@ export default function Home() {
             </div>
             <p style={{ color: 'rgba(164,192,176,0.6)', fontSize: '0.78rem', marginTop: '1rem' }}>Sem contrato · Cancele quando quiser</p>
           </div>
-          <div style={{ backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: '2rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: '1.25rem' }}>
-              <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: '#ff5f57' }} />
-              <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: '#ffbd2e' }} />
-              <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: '#28c840' }} />
-              <span style={{ color: 'rgba(244,236,225,0.35)', fontSize: '0.75rem', marginLeft: 8 }}>WhatsApp · Check Fazenda</span>
-            </div>
-            {[
-              { de: 'Você', msg: '📍 [Localização compartilhada]', lado: 'right' },
-              { de: 'Bot', msg: '⏳ Consultando dados da propriedade...', lado: 'left' },
-              { de: 'Bot', msg: '🌾 DADOS DA PROPRIEDADE\n━━━━━━━━━━━\n📋 CAR: GO-5219803-XXXX\n• Status: Ativo ✅\n• Área: 1.240 ha\n• Rio Verde - GO\n\n🏛️ INCRA/SIGEF\n• CCIR: 12345678\n• Titular: João Silva\n\n🚨 IBAMA: ✅ Sem embargos', lado: 'left' },
-            ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', justifyContent: item.lado === 'right' ? 'flex-end' : 'flex-start', marginBottom: '0.625rem' }}>
-                <div style={{ backgroundColor: item.lado === 'right' ? '#2D4F38' : 'rgba(255,255,255,0.08)', borderRadius: item.lado === 'right' ? '12px 12px 2px 12px' : '12px 12px 12px 2px', padding: '0.5rem 0.75rem', maxWidth: '85%' }}>
-                  <p style={{ color: '#F4ECE1', fontSize: '0.75rem', lineHeight: 1.5, whiteSpace: 'pre-line', margin: 0 }}>{item.msg}</p>
+          {/* SMARTPHONE MOCKUP */}
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{
+              width: 272,
+              height: 556,
+              border: '12px solid #111',
+              borderRadius: 40,
+              backgroundColor: '#0b141a',
+              position: 'relative',
+              overflow: 'hidden',
+              boxShadow: '0 30px 60px -12px rgba(0,0,0,0.7), inset 0 0 12px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.06)',
+              flexShrink: 0,
+              display: 'flex',
+              flexDirection: 'column',
+            }}>
+
+              {/* NOTCH / DYNAMIC ISLAND */}
+              <div style={{
+                width: 100, height: 18,
+                backgroundColor: '#111',
+                borderRadius: 12,
+                position: 'absolute',
+                top: 10, left: '50%',
+                transform: 'translateX(-50%)',
+                zIndex: 30,
+              }} />
+
+              {/* STATUS BAR */}
+              <div style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '30px 18px 6px',
+                fontSize: 11, color: 'rgba(255,255,255,0.85)',
+                fontWeight: 600, flexShrink: 0,
+              }}>
+                <span>09:41</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                  {/* Signal */}
+                  <svg width="15" height="11" viewBox="0 0 15 11" fill="white">
+                    <rect x="0" y="8" width="3" height="3" rx="0.5" opacity="0.35"/>
+                    <rect x="4" y="5.5" width="3" height="5.5" rx="0.5" opacity="0.6"/>
+                    <rect x="8" y="3" width="3" height="8" rx="0.5" opacity="0.85"/>
+                    <rect x="12" y="0" width="3" height="11" rx="0.5"/>
+                  </svg>
+                  {/* WiFi */}
+                  <svg width="14" height="11" viewBox="0 0 20 14" fill="white">
+                    <circle cx="10" cy="13" r="1.5"/>
+                    <path d="M6.5 9.5C7.5 8.5 8.7 8 10 8s2.5.5 3.5 1.5" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.8"/>
+                    <path d="M3.5 6.5C5.2 4.8 7.5 3.8 10 3.8s4.8 1 6.5 2.7" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.5"/>
+                    <path d="M0.5 3.5C2.8 1.2 6.3 0 10 0s7.2 1.2 9.5 3.5" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.25"/>
+                  </svg>
+                  {/* Battery */}
+                  <svg width="22" height="11" viewBox="0 0 24 12" fill="none">
+                    <rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="rgba(255,255,255,0.6)" strokeWidth="1"/>
+                    <rect x="2" y="2" width="15" height="8" rx="1.5" fill="white"/>
+                    <path d="M21.5 4v4c1-.3 2-1 2-2s-1-1.7-2-2z" fill="rgba(255,255,255,0.45)"/>
+                  </svg>
                 </div>
               </div>
-            ))}
+
+              {/* WHATSAPP HEADER */}
+              <div style={{
+                backgroundColor: '#1f2c34',
+                padding: '8px 14px 10px',
+                display: 'flex', alignItems: 'center', gap: 10,
+                borderBottom: '1px solid #2a3942',
+                flexShrink: 0,
+              }}>
+                <div style={{
+                  width: 38, height: 38, borderRadius: '50%',
+                  backgroundColor: '#2D4F38',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  flexShrink: 0, border: '1.5px solid #4CAF78',
+                }}>
+                  <MapPin size={17} color="#4CAF78" />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <p style={{ color: '#e9eaeb', fontSize: 13, fontWeight: 600, margin: 0, lineHeight: 1.2 }}>Check Fazenda</p>
+                  <p style={{ color: '#4CAF78', fontSize: 11, margin: 0, marginTop: 1 }}>Online agora</p>
+                </div>
+              </div>
+
+              {/* CHAT AREA */}
+              <div style={{
+                flex: 1,
+                padding: '10px 10px 0',
+                display: 'flex', flexDirection: 'column', gap: 5,
+                overflowY: 'hidden',
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='%230b141a'/%3E%3Cpath d='M20 10 L25 15 L20 20 L15 15z' fill='rgba(255,255,255,0.015)'/%3E%3C/svg%3E")`,
+              }}>
+
+                {/* Msg 1: User location */}
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                  <div style={{
+                    backgroundColor: '#005c4b',
+                    borderRadius: '10px 10px 2px 10px',
+                    padding: '7px 10px',
+                    maxWidth: '80%',
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+                      <div style={{ width: 32, height: 32, borderRadius: 6, backgroundColor: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <MapPin size={16} color="#4CAF78" />
+                      </div>
+                      <div>
+                        <p style={{ color: '#e9eaeb', fontSize: 11, margin: 0, fontWeight: 600 }}>Localização</p>
+                        <p style={{ color: 'rgba(233,234,235,0.6)', fontSize: 10, margin: 0 }}>Rio Verde, GO</p>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 3, marginTop: 3 }}>
+                      <span style={{ color: 'rgba(233,234,235,0.45)', fontSize: 9 }}>09:41</span>
+                      <svg width="16" height="9" viewBox="0 0 18 10" fill="none">
+                        <path d="M1 5L4 8L8 4" stroke="#53BDEB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M6 5L9 8L17 1" stroke="#53BDEB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Msg 2: Bot processing */}
+                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                  <div style={{
+                    backgroundColor: '#202c33',
+                    borderRadius: '10px 10px 10px 2px',
+                    padding: '7px 10px',
+                    maxWidth: '75%',
+                  }}>
+                    <p style={{ color: 'rgba(233,234,235,0.75)', fontSize: 11, margin: 0 }}>⏳ Consultando dados...</p>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 2 }}>
+                      <span style={{ color: 'rgba(233,234,235,0.35)', fontSize: 9 }}>09:41</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Msg 3: Bot result */}
+                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                  <div style={{
+                    backgroundColor: '#202c33',
+                    borderRadius: '10px 10px 10px 2px',
+                    padding: '8px 10px',
+                    maxWidth: '90%',
+                  }}>
+                    <p style={{ color: '#e9eaeb', fontSize: 10.5, lineHeight: 1.6, margin: 0, whiteSpace: 'pre-line', fontFamily: 'monospace' }}>
+                      {'🌾 *DADOS DA PROPRIEDADE*\n━━━━━━━━━━━━\n📋 CAR: GO-5219803-XXXX\n• Status: Ativo ✅\n• Área: 1.240 ha\n• Rio Verde — GO\n\n🏛️ INCRA/SIGEF\n• CCIR: 12345678\n• Titular: João Silva\n\n🚨 IBAMA: ✅ Sem embargos'}
+                    </p>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
+                      <span style={{ color: 'rgba(233,234,235,0.35)', fontSize: 9 }}>09:42</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* INPUT BAR */}
+              <div style={{
+                backgroundColor: '#1f2c34',
+                padding: '8px 10px',
+                display: 'flex', alignItems: 'center', gap: 7,
+                borderTop: '1px solid #2a3942',
+                flexShrink: 0,
+              }}>
+                <div style={{
+                  flex: 1, backgroundColor: '#2a3942',
+                  borderRadius: 20, padding: '7px 14px',
+                  display: 'flex', alignItems: 'center',
+                }}>
+                  <span style={{ color: 'rgba(233,234,235,0.3)', fontSize: 12 }}>Mensagem</span>
+                </div>
+                <div style={{
+                  width: 36, height: 36, borderRadius: '50%',
+                  backgroundColor: '#00a884',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  flexShrink: 0,
+                }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                    <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                  </svg>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
