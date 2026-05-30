@@ -49,7 +49,7 @@ export async function gerarFarmScanPDF(dados: DadosFarmScan): Promise<Buffer> {
 <body>
   <div class="header">
     <div>
-      <div class="logo">🌾 Dados Fazenda</div>
+      <div class="logo">🌾 Check Fazenda</div>
       <div class="subtitulo">Farm Scan — Relatório Mensal</div>
     </div>
     <div style="text-align:right">
@@ -109,7 +109,7 @@ export async function gerarFarmScanPDF(dados: DadosFarmScan): Promise<Buffer> {
   </div>`}
 
   <div class="footer">
-    <span>Dados Fazenda — Sistema de Monitoramento Rural</span>
+    <span>Check Fazenda — Sistema de Monitoramento Rural</span>
     <span>Gerado em ${new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
   </div>
 </body>

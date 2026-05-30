@@ -25,7 +25,7 @@ export function validarEnv() {
 
   const opcionaisFaltando = OPTIONAL_ENV.filter(key => !process.env[key])
   if (opcionaisFaltando.length > 0 && process.env.NODE_ENV === 'development') {
-    console.warn(`[Dados Fazenda] Variáveis opcionais não configuradas: ${opcionaisFaltando.join(', ')}`)
+    console.warn(`[Check Fazenda] Variáveis opcionais não configuradas: ${opcionaisFaltando.join(', ')}`)
   }
 }
 

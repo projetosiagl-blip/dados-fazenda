@@ -49,7 +49,7 @@ export async function criarAssinatura(clienteId: string, plano: Plano) {
     billingType: 'CREDIT_CARD',
     value: PRECOS[plano],
     cycle: 'MONTHLY',
-    description: `Plano ${plano.charAt(0).toUpperCase() + plano.slice(1)} — Dados Fazenda`,
+    description: `Plano ${plano.charAt(0).toUpperCase() + plano.slice(1)} — Check Fazenda`,
     nextDueDate: new Date().toISOString().split('T')[0],
   })
   return data

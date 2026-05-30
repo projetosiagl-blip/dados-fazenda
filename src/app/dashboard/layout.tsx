@@ -45,7 +45,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
             <div style={{ width: 32, height: 32, backgroundColor: '#52b788', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <MapPin size={17} color="white" />
             </div>
-            <span style={{ color: 'white', fontWeight: 700, fontSize: '0.95rem' }}>Dados Fazenda</span>
+            <span style={{ color: 'white', fontWeight: 700, fontSize: '0.95rem' }}>Check Fazenda</span>
           </Link>
         </div>
 

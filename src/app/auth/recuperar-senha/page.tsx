@@ -37,7 +37,7 @@ export default function RecuperarSenha() {
           <div style={{ width: 32, height: 32, backgroundColor: '#52b788', borderRadius: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <MapPin size={18} color="white" />
           </div>
-          <span style={{ color: 'white', fontWeight: 700 }}>Dados Fazenda</span>
+          <span style={{ color: 'white', fontWeight: 700 }}>Check Fazenda</span>
         </Link>
       </header>
 

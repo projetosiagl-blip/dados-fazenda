@@ -9,7 +9,7 @@ export default function Privacidade() {
           <div style={{ width: 32, height: 32, backgroundColor: '#52b788', borderRadius: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <MapPin size={18} color="white" />
           </div>
-          <span style={{ color: 'white', fontWeight: 700 }}>Dados Fazenda</span>
+          <span style={{ color: 'white', fontWeight: 700 }}>Check Fazenda</span>
         </Link>
       </header>
 
@@ -21,7 +21,7 @@ export default function Privacidade() {
           {[
             {
               titulo: '1. Quem somos',
-              texto: 'Dados Fazenda é operado pela LGE SOLUCOES LTDA. (CNPJ 50.571.717/0001-61). Esta política descreve como coletamos, usamos e protegemos seus dados pessoais.'
+              texto: 'Check Fazenda é operado pela LGE SOLUCOES LTDA. (CNPJ 50.571.717/0001-61). Esta política descreve como coletamos, usamos e protegemos seus dados pessoais.'
             },
             {
               titulo: '2. Dados que coletamos',

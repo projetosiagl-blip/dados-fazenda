@@ -89,7 +89,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       .eq('id', id)
 
     // Envia WhatsApp
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://dadosfazenda.com.br'
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://checkfazenda.com.br'
     try {
       await enviarMensagem(consulta.telefone, resultado.texto)
 

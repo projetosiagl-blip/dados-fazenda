@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://dadosfazenda.com.br'
+  const base = 'https://checkfazenda.com.br'
 
   return [
     { url: base, lastModified: new Date(), changeFrequency: 'monthly', priority: 1 },

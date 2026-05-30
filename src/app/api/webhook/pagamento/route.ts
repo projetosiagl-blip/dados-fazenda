@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
   const body = await req.json()
   const { event, payment, subscription } = body
   const supabase = createServiceClient()
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://dadosfazenda.com.br'
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://checkfazenda.com.br'
 
   // ── Consulta avulsa (externalReference = "consulta:<uuid>") ──────────────────
   const externalRef = payment?.externalReference as string | undefined

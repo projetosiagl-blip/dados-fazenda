@@ -5,7 +5,7 @@ import { processarConsulta } from '@/lib/consulta'
 import { createServiceClient } from '@/lib/supabase/server'
 
 const MSG_BOAS_VINDAS = (nome: string, url: string) =>
-  `👋 Olá${nome ? `, ${nome}` : ''}! Bem-vindo ao *Dados Fazenda*.\n\n` +
+  `👋 Olá${nome ? `, ${nome}` : ''}! Bem-vindo ao *Check Fazenda*.\n\n` +
   `🌾 Consulte qualquer fazenda do Brasil em segundos!\n\n` +
   `*Como usar:*\n` +
   `📍 Envie sua *localização* pelo WhatsApp\n` +
@@ -15,7 +15,7 @@ const MSG_BOAS_VINDAS = (nome: string, url: string) =>
   `Para assinar: ${url}/planos`
 
 const MSG_AJUDA = (url: string) =>
-  `📋 *Menu de ajuda — Dados Fazenda*\n\n` +
+  `📋 *Menu de ajuda — Check Fazenda*\n\n` +
   `*O que posso consultar:*\n` +
   `• CAR (Cadastro Ambiental Rural)\n` +
   `• INCRA / SIGEF / CCIR\n` +
@@ -31,7 +31,7 @@ const MSG_AJUDA = (url: string) =>
   `*Planos:* ${url}/planos`
 
 const MSG_PLANOS = (url: string) =>
-  `💳 *Planos Dados Fazenda*\n\n` +
+  `💳 *Planos Check Fazenda*\n\n` +
   `🌱 *Básico — R$ 59,90/mês*\n` +
   `10 camadas: CAR, INCRA, embargos e mais\n\n` +
   `🌿 *Full — R$ 99,90/mês*\n` +
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
     if (!mensagem) return NextResponse.json({ ok: true })
 
     const supabase = createServiceClient()
-    const url = process.env.NEXT_PUBLIC_APP_URL ?? 'https://dadosfazenda.com.br'
+    const url = process.env.NEXT_PUBLIC_APP_URL ?? 'https://checkfazenda.com.br'
 
     const { data: usuario } = await supabase
       .from('usuarios')

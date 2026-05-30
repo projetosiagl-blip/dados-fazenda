@@ -5,7 +5,7 @@ import type { Metadata, Viewport } from 'next'
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, maximumScale: 1 }
 
 export const metadata: Metadata = {
-  title: 'Dados Fazenda — Consulta de Imóveis Rurais em Segundos',
+  title: 'Check Fazenda — Consulta de Imóveis Rurais em Segundos',
   description: 'Acesse dados de CAR, INCRA, embargos IBAMA, terras indígenas e mais de 25 camadas de informação rural. Consulte qualquer fazenda do Brasil pelo WhatsApp ou painel web.',
   keywords: 'consulta rural, CAR, INCRA, SIGEF, imóvel rural, fazenda, embargos IBAMA, dados rurais, monitoramento rural',
 }
@@ -65,7 +65,7 @@ const COMPARATIVO = [
 
 const FAQ_ITEMS = [
   { p: 'Os dados são atualizados com que frequência?', r: 'CAR e INCRA são consultados em tempo real. Embargos IBAMA e queimadas sincronizam diariamente. Camadas estáticas (terras indígenas, UCs) atualizam mensalmente.' },
-  { p: 'Preciso de um celular específico?', r: 'Não. Use seu WhatsApp normalmente. Salve o número do Dados Fazenda na agenda e envie sua localização ou o código CAR.' },
+  { p: 'Preciso de um celular específico?', r: 'Não. Use seu WhatsApp normalmente. Salve o número do Check Fazenda na agenda e envie sua localização ou o código CAR.' },
   { p: 'Os dados substituem documentos oficiais?', r: 'Não. Os dados são para fins informativos e de monitoramento. Para fins jurídicos, consulte sempre os documentos originais nos sistemas governamentais.' },
   { p: 'Posso monitorar propriedades de terceiros?', r: 'Sim. Cadastre qualquer imóvel rural do Brasil, independente de ser proprietário. Advogados e corretores usam para acompanhar imóveis de clientes.' },
   { p: 'O que acontece se eu cancelar?', r: 'Você pode cancelar a qualquer momento. O acesso permanece ativo até o fim do período pago. Sem multa ou fidelidade mínima.' },
@@ -91,7 +91,7 @@ export default function Home() {
             <div style={{ width: 34, height: 34, backgroundColor: '#52b788', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <MapPin size={18} color="white" strokeWidth={2.5} />
             </div>
-            <span style={{ color: 'white', fontWeight: 700, fontSize: '1.05rem', letterSpacing: '-0.3px' }}>Dados Fazenda</span>
+            <span style={{ color: 'white', fontWeight: 700, fontSize: '1.05rem', letterSpacing: '-0.3px' }}>Check Fazenda</span>
           </Link>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '1.75rem' }}>
             <a href="#como-funciona" style={{ color: '#a8d5b5', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500 }}>Como funciona</a>
@@ -134,7 +134,7 @@ export default function Home() {
               <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: '#ff5f57' }} />
               <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: '#ffbd2e' }} />
               <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: '#28c840' }} />
-              <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', marginLeft: 8 }}>WhatsApp · Dados Fazenda</span>
+              <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', marginLeft: 8 }}>WhatsApp · Check Fazenda</span>
             </div>
             {[
               { de: 'Você', msg: '📍 [Localização compartilhada]', lado: 'right' },
@@ -444,7 +444,7 @@ export default function Home() {
       <section style={{ padding: '5rem 1.5rem', backgroundColor: 'white', borderTop: '1px solid #e2e8d5' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800, color: '#1a1a1a', letterSpacing: '-0.5px' }}>Para quem é o Dados Fazenda</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800, color: '#1a1a1a', letterSpacing: '-0.5px' }}>Para quem é o Check Fazenda</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
             {[
@@ -510,7 +510,7 @@ export default function Home() {
                 <div style={{ width: 28, height: 28, backgroundColor: '#52b788', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <MapPin size={15} color="white" />
                 </div>
-                <span style={{ color: '#a8d5b5', fontWeight: 700 }}>Dados Fazenda</span>
+                <span style={{ color: '#a8d5b5', fontWeight: 700 }}>Check Fazenda</span>
               </div>
               <p style={{ color: '#4a6a52', fontSize: '0.78rem', lineHeight: 1.7 }}>
                 LGE SOLUCOES LTDA.<br />
@@ -533,7 +533,7 @@ export default function Home() {
             </div>
           </div>
           <div style={{ borderTop: '1px solid #1e3d24', paddingTop: '1.5rem' }}>
-            <p style={{ color: '#3d6b45', fontSize: '0.75rem', textAlign: 'center' }}>© 2026 Dados Fazenda · LGE SOLUCOES LTDA. · CNPJ 50.571.717/0001-61 · Todos os direitos reservados</p>
+            <p style={{ color: '#3d6b45', fontSize: '0.75rem', textAlign: 'center' }}>© 2026 Check Fazenda · LGE SOLUCOES LTDA. · CNPJ 50.571.717/0001-61 · Todos os direitos reservados</p>
           </div>
         </div>
       </footer>

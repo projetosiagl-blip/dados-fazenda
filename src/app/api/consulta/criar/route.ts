@@ -50,8 +50,8 @@ export async function POST(req: NextRequest) {
     const supabase = createServiceClient()
     const valor = PRECOS_AVULSO[dados.tipo]
     const descricao = dados.tipo === 'relatorio'
-      ? `Relatório Completo — Dados Fazenda — ${dados.car ?? `${lat},${lon}`}`
-      : `Consulta Rural — Dados Fazenda — ${dados.car ?? `${lat},${lon}`}`
+      ? `Relatório Completo — Check Fazenda — ${dados.car ?? `${lat},${lon}`}`
+      : `Consulta Rural — Check Fazenda — ${dados.car ?? `${lat},${lon}`}`
 
     // Cria registro pendente no banco
     const { data: consulta, error: erroInsert } = await supabase

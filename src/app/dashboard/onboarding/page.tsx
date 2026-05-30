@@ -8,7 +8,7 @@ const PASSOS = [
     num: 1,
     icon: MessageCircle,
     titulo: 'Salve o número do bot',
-    descricao: 'Salve o número abaixo na sua agenda como "Dados Fazenda" para começar a consultar pelo WhatsApp.',
+    descricao: 'Salve o número abaixo na sua agenda como "Check Fazenda" para começar a consultar pelo WhatsApp.',
     acao: 'Salvar contato',
     link: 'https://wa.me/5562942631425',
   },

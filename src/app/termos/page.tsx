@@ -9,7 +9,7 @@ export default function Termos() {
           <div style={{ width: 32, height: 32, backgroundColor: '#52b788', borderRadius: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <MapPin size={18} color="white" />
           </div>
-          <span style={{ color: 'white', fontWeight: 700 }}>Dados Fazenda</span>
+          <span style={{ color: 'white', fontWeight: 700 }}>Check Fazenda</span>
         </Link>
       </header>
 
@@ -21,11 +21,11 @@ export default function Termos() {
           {[
             {
               titulo: '1. Aceitação dos termos',
-              texto: 'Ao acessar ou usar a plataforma Dados Fazenda, você concorda com estes Termos de Uso. Se não concordar, não utilize o serviço. O uso continuado da plataforma após alterações constitui aceitação das mesmas.'
+              texto: 'Ao acessar ou usar a plataforma Check Fazenda, você concorda com estes Termos de Uso. Se não concordar, não utilize o serviço. O uso continuado da plataforma após alterações constitui aceitação das mesmas.'
             },
             {
               titulo: '2. Descrição do serviço',
-              texto: 'O Dados Fazenda é uma plataforma digital que fornece consultas e monitoramento de dados de imóveis rurais brasileiros, agregando informações de fontes públicas como CAR/SICAR, INCRA, SIGEF, IBAMA e INPE. Os dados são fornecidos para fins informativos e não substituem documentos oficiais.'
+              texto: 'O Check Fazenda é uma plataforma digital que fornece consultas e monitoramento de dados de imóveis rurais brasileiros, agregando informações de fontes públicas como CAR/SICAR, INCRA, SIGEF, IBAMA e INPE. Os dados são fornecidos para fins informativos e não substituem documentos oficiais.'
             },
             {
               titulo: '3. Cadastro e conta',
@@ -41,11 +41,11 @@ export default function Termos() {
             },
             {
               titulo: '6. Precisão dos dados',
-              texto: 'Os dados fornecidos provêm de fontes governamentais públicas. O Dados Fazenda não garante a completude, exatidão ou atualidade absoluta das informações. Os dados devem ser verificados nas fontes oficiais antes de qualquer decisão jurídica ou financeira.'
+              texto: 'Os dados fornecidos provêm de fontes governamentais públicas. O Check Fazenda não garante a completude, exatidão ou atualidade absoluta das informações. Os dados devem ser verificados nas fontes oficiais antes de qualquer decisão jurídica ou financeira.'
             },
             {
               titulo: '7. Limitação de responsabilidade',
-              texto: 'O Dados Fazenda não se responsabiliza por decisões tomadas com base nas informações fornecidas pela plataforma, por indisponibilidade temporária do serviço, ou por imprecisões nos dados provenientes de fontes governamentais. A responsabilidade total da plataforma limita-se ao valor pago nos últimos 3 meses.'
+              texto: 'O Check Fazenda não se responsabiliza por decisões tomadas com base nas informações fornecidas pela plataforma, por indisponibilidade temporária do serviço, ou por imprecisões nos dados provenientes de fontes governamentais. A responsabilidade total da plataforma limita-se ao valor pago nos últimos 3 meses.'
             },
             {
               titulo: '8. Propriedade intelectual',

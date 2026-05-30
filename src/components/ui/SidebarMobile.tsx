@@ -33,7 +33,7 @@ export default function SidebarMobile({ plano, nomeUsuario }: Props) {
           <div style={{ width: 28, height: 28, backgroundColor: '#52b788', borderRadius: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <MapPin size={15} color="white" />
           </div>
-          <span style={{ color: 'white', fontWeight: 700, fontSize: '0.9rem' }}>Dados Fazenda</span>
+          <span style={{ color: 'white', fontWeight: 700, fontSize: '0.9rem' }}>Check Fazenda</span>
         </Link>
         <button onClick={() => setAberto(!aberto)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'white', padding: '0.25rem', display: 'flex', alignItems: 'center' }}>
           {aberto ? <X size={22} /> : <Menu size={22} />}
