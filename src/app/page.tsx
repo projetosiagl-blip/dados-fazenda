@@ -88,8 +88,14 @@ export default function Home() {
       <header style={{ backgroundColor: '#1D3325', position: 'sticky', top: 0, zIndex: 100, borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', padding: '0 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64 }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-            <div style={{ width: 34, height: 34, backgroundColor: '#B07D4F', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <MapPin size={18} color="white" strokeWidth={2.5} />
+            <div style={{ width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
+                <circle cx="12" cy="12" r="10" fill="#1D3325" stroke="#B07D4F" strokeWidth="1" />
+                <path d="M6 14.5C8 13.5 10 13.5 12 14.5C14 15.5 16 15.5 18 14.5" stroke="#8EAB9A" strokeWidth="1" strokeLinecap="round" />
+                <path d="M5 17.5C7.5 16.5 10.5 16.5 13 17.5C15.5 18.5 18.5 18.5 19 17.5" stroke="#8EAB9A" strokeWidth="1" strokeLinecap="round" />
+                <path d="M12 5C12 5 15 6 15 9C15 12 12 13 12 13C12 13 9 12 9 9C9 6 12 5 12 5Z" fill="#B07D4F" />
+                <path d="M12 5V12" stroke="#1D3325" strokeWidth="1" strokeLinecap="round" />
+              </svg>
             </div>
             <span style={{ color: '#F4ECE1', fontWeight: 700, fontSize: '1.05rem', letterSpacing: '-0.3px' }}>Check Fazenda</span>
           </Link>
@@ -667,8 +673,14 @@ export default function Home() {
           <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem', marginBottom: '2rem' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: '0.875rem' }}>
-                <div style={{ width: 28, height: 28, backgroundColor: '#B07D4F', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <MapPin size={15} color="white" />
+                <div style={{ width: 32, height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
+                    <circle cx="12" cy="12" r="10" fill="#1D3325" stroke="#B07D4F" strokeWidth="1" />
+                    <path d="M6 14.5C8 13.5 10 13.5 12 14.5C14 15.5 16 15.5 18 14.5" stroke="#8EAB9A" strokeWidth="1" strokeLinecap="round" />
+                    <path d="M5 17.5C7.5 16.5 10.5 16.5 13 17.5C15.5 18.5 18.5 18.5 19 17.5" stroke="#8EAB9A" strokeWidth="1" strokeLinecap="round" />
+                    <path d="M12 5C12 5 15 6 15 9C15 12 12 13 12 13C12 13 9 12 9 9C9 6 12 5 12 5Z" fill="#B07D4F" />
+                    <path d="M12 5V12" stroke="#1D3325" strokeWidth="1" strokeLinecap="round" />
+                  </svg>
                 </div>
                 <span style={{ color: '#F4ECE1', fontWeight: 700 }}>Check Fazenda</span>
               </div>
